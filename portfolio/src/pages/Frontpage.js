@@ -1,49 +1,19 @@
 const Frontpage = () => {
+  var isDanish;
+
+  if (localStorage.getItem("isDanish") === "true") {
+    isDanish = true
+  } else {
+    isDanish = false
+  }
   return (
     <main id="frontpage">
-      <div id="front_top">
+      <div id="frontpage_text">
         <h1>Magnus Holm</h1>
-        <h2>Front-end Webudvikler</h2>
+        <h2>{isDanish ? "En Front-end Webudvikler" : "A Front-end Webdeveloper"}</h2>
+        <h3>{isDanish ? "Velkommen til min portfolio" : "Welcome to my portfolio"}</h3>
+        <p>{isDanish ? "Her vil du finde nogle af de projekter jeg har lave, samt noget information om mig" : "Here you will find some of the projects I have done, as well as some information about me"}</p>
       </div>
-      <section>
-        <h2>Oversigt over hoved webudviklings kompetencer</h2>
-        <div id="prime_skills_container">
-          <div className="prime_skills">
-            <img
-              src="/HTML_CSS_JS.png"
-              alt="Iconerne for CSS 3, HTML 5 og JavaScript"
-            />
-            <p>
-              Jeg har arbejdet med HTML, CSS and JavaScript siden 2018 og har et
-              godt kendskab til alle 3.
-            </p>
-          </div>
-          <div className="prime_skills">
-            <img src="/React.png" alt="Logoet for React.js" />
-            <p>
-              Jeg har arbejdet med React.js i nogle måneder i min fritid, hvor
-              jeg har lært det grundlæggende.
-            </p>
-          </div>
-          <div className="prime_skills">
-            <img src="/Node.js.png" alt="Logoet for Node.js" />
-            <p>
-              Jeg har arbejdet med Node.js siden sommeren 2018 og har brugt en
-              række forskellige Node pakker.
-            </p>
-          </div>
-          <div className="prime_skills">
-            <img
-              src="/database.png"
-              alt="En simpel illustration af en database"
-            />
-            <p>
-              Jeg har arbejdet med databaser siden sommeren 2018 og har primært
-              brugt MySQL, men har også prøvet at arbejde lidt med NoSQL.
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
   );
 };

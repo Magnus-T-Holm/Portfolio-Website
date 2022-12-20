@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Deck } from "cards";
-import TarotCard from "./tarot_card";
+import TarotCard from "./TarotCard";
 
 const Tarot = () => {
   const [deck] = useState(
@@ -149,10 +149,6 @@ const Tarot = () => {
 
   const target = React.createRef();
   const wrong_input = React.createRef();
-
-  useEffect(() => {
-    deck.shuffleRemaining();
-  }, []);
 
   // Draw cards from deck
   function draw_cards() {

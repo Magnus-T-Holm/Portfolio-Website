@@ -10,25 +10,17 @@ import {
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"
+import UpdateTitle from "./components/UpdateTitle";
 
-// DK
+// Pages
 import Frontpage from "./pages/Frontpage";
-import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
-
-// EN
-import Frontpage_EN from "./pages/Frontpage_EN";
-import Skills_EN from "./pages/Skills_EN";
-import Projects_EN from "./pages/Projects_EN";
+import AboutMe from "./pages/AboutMe";
 
 // ------------------------- Projects -------------------------
-// DK
-import Memory_Game from "./components/projects/memory_game/memory_game";
-
-// EN
-import Card_Draw from "./components/projects/card_draw/card_draw";
-import Tarot from "./components/projects/tarot/tarot";
-import Memory_Game_EN from "./components/projects/memory_game/memory_game_EN";
+import MemoryGame from "./components/projects/memory_game/MemoryGame";
+import CardDraw from "./components/projects/card_draw/CardDraw";
+import Tarot from "./components/projects/tarot/Tarot";
 
 import "./App.css";
 
@@ -37,22 +29,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <ScrollToTop />
+        <UpdateTitle />
         <Header />
         <Routes>
           <Route path="/" element={<Frontpage />} />
-          <Route path="/en" element={<Frontpage_EN />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/en/skills" element={<Skills_EN />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/en/projects" element={<Projects_EN />} />
-          <Route path="/projects/card-draw" element={<Card_Draw />} />
+          <Route path="/projects/card-draw" element={<CardDraw />} />
           <Route path="/projects/tarot" element={<Tarot />} />
-          <Route path="/projects/memory_game" element={<Memory_Game />} />
-          <Route
-            path="/en/projects/memory_game"
-            element={<Memory_Game_EN />}
-          />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/projects/memory-game" element={<MemoryGame />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </BrowserRouter>

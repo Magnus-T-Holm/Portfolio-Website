@@ -1,46 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
+
 
 const Header = () => {
-  // Changes nav links based on current language
-  var links;
-  if (/en/.test(window.location.href)) {
-    links = [
-      { name: "Home", href: "/en/" },
-      { name: "Skills", href: "/en/skills" },
-      { name: "Projects", href: "/en/projects" },
-    ];
+  var { pathname } = useLocation();
+  var isDanish;
+
+  if (localStorage.getItem("isDanish") == null) {
+    localStorage.setItem("isDanish", "true")
+  }
+
+  if (localStorage.getItem("isDanish") === "true") {
+    isDanish = true
   } else {
-    links = [
-      { name: "Hjem", href: "/" },
-      { name: "Kompetencer", href: "/skills" },
-      { name: "Projekter", href: "/projects" },
-    ];
+    isDanish = false
   }
 
-  // Changes language links based on current site
-  var da = "/";
-  var en = "/en/";
-
-  if (/skills/.test(window.location.href)) {
-    da += "skills";
-    en += "skills";
+  function languageSwitchDanish() {
+    if (localStorage.getItem("isDanish") === "false") {
+      localStorage.setItem("isDanish", "true")
+      window.location.reload();
+    }
   }
 
-  if (/projects/.test(window.location.href)) {
-    da += "projects";
-    en += "projects";
+  function languageSwitchEnglish() {
+    if (localStorage.getItem("isDanish") === "true") {
+      localStorage.setItem("isDanish", "false")
+      window.location.reload();
+    }
   }
 
   function mobileOpenClose() {
-    const mobile_links = document.querySelector("#mobile_links");
-    if (mobile_links.style.display === "block") {
-      mobile_links.style.display = "none";
+    var menu = document.querySelector("#mobile_overlay");
+    var body = document.querySelector("body");
+    if (menu.style.width === "100%") {
+      menu.style.width = "0";
+      body.style.overflow = "visible";
     } else {
-      mobile_links.style.display = "block";
+      menu.style.width = "100%";
+      body.style.overflow = "hidden";
     }
+  }
+
+  let currentPage;
+  if (pathname === '/about-me') {
+    currentPage = isDanish ? "Om mig" : "About me";
+  } else if (/projects/g.test(pathname)) {
+    currentPage = isDanish ? "Projekter" : "Projects";
+  } else {
+    currentPage = isDanish ? "Hjem" : "Home";
   }
 
   return (
@@ -48,38 +59,39 @@ const Header = () => {
       <nav>
         <div id="desktop">
           <ul>
-            {links.map((link, i) => (
-              <li><Link to={link.href} key={i}>{link.name}</Link></li>
-            ))}
+            <li className={pathname === '/' ? "active" : ""}><Link to={"/"} >{isDanish ? "Hjem" : "Home"}</Link></li>
+            <li className={/projects/g.test(pathname) ? "active" : ""}><Link to={"/projects"} >{isDanish ? "Projekter" : "Projects"}</Link></li>
+            <li className={pathname === '/about-me' ? "active" : ""}><Link to={"/about-me"} >{isDanish ? "Om mig" : "About me"}</Link></li>
+            <li className="languageSwitch">
+              <p>{isDanish ? "Sprog" : "Language"}</p>
+              <button className={isDanish ? "currentLanguage" : ""} onClick={languageSwitchDanish}>Dansk</button>
+              <button className={isDanish ? "" : "currentLanguage"} onClick={languageSwitchEnglish}>English</button>
+            </li>
           </ul>
-          <div className="lang_switch">
-            <Link to={da}>DK</Link>
-            <p>/</p>
-            <Link to={en}>EN</Link>
-          </div>
         </div>
-        <div id="mobile">
-          <p>Menu</p>
-          <div id="mobile_links">
-            <ul>
-              {links.map((link, i) => (
-                <li><Link name={link.name} href={link.href} key={i} /></li>
-              ))}
-              <li>
-                <div className="lang_switch">
-                  <Link to={da}>DK</Link>
-                  <p>/</p>
-                  <Link to={en}>EN</Link>
-                </div>
-              </li>
-            </ul>
+        <div id="mobile_header">
+          <div id="mobile_header_top">
+            <h1>{currentPage}</h1>
+            <FontAwesomeIcon id="mobile_menu_button" icon={faBars} onClick={mobileOpenClose} />
           </div>
-          <button className="menu_button" onClick={mobileOpenClose}>
-            <FontAwesomeIcon icon={faBars} />
-          </button>
+          <div id="mobile_overlay">
+            <FontAwesomeIcon className="close_button" icon={faX} onClick={mobileOpenClose} />
+            <div id="overlay_content">
+              <ul>
+                <li className={pathname === '/' ? "active" : ""}><Link onClick={mobileOpenClose} to={"/"} >{isDanish ? "Hjem" : "Home"} </Link></li>
+                <li className={/projects/g.test(pathname) ? "active" : ""}><Link onClick={mobileOpenClose} to={"/projects"} >{isDanish ? "Projekter" : "Projects"}</Link></li>
+                <li className={pathname === '/about-me' ? "active" : ""}><Link onClick={mobileOpenClose} to={"/about-me"} >{isDanish ? "Om mig" : "About me"}</Link></li>
+                <li className="languageSwitch">
+                  <p>{isDanish ? "Sprog" : "Language"}</p>
+                  <button className={isDanish ? "currentLanguage" : ""} onClick={languageSwitchDanish}>Dansk</button>
+                  <button className={isDanish ? "" : "currentLanguage"} onClick={languageSwitchEnglish}>English</button>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
-    </header>
+    </header >
   );
 };
 
