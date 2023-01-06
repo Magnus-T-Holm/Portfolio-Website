@@ -14,7 +14,6 @@ const AboutMe = () => {
       <div id="about_me_description">
         <img id="profile_img" src="profile.jpg" alt="" />
         <p>{isDanish ? "Mit navn er Magnus Holm, jeg er pt 27 år og bor i Roskilde. Jeg er uddannet web-integrator og er i øjeblikket igang med Multimediedesigner uddannelsen i Køge. Jeg bruger primært min fritid på at spille computer og se YouTube, når jeg ikke arbejder på en opgave til uddannelsen." : "My name is Magnus Holm, I am currently 27 years old and live in Roskilde. I have an education as a web integrator and I'm currently studying Multimedia Design in Køge. I mainly spend my free time playing on the computer and watching YouTube, when I'm not working on an assignment for the education."}</p>
-        {/* <p>{isDanish ? "" : ""}</p> */}
       </div>
       <div id="about_me_skills">
         <div >
