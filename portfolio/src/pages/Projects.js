@@ -30,7 +30,7 @@ const Projects = () => {
             <h2>{isDanish ? "Projekt info" : "Project info"}</h2>
             <section>
               <p>
-                {isDanish ? "Et lille huskespil, som vi skulle lave under web-integrator uddannelsens grundforløbets 2. del , opdateret til at bruge React." : "A small memory game that we had to make during the 2nd part of the basic course for the web-integrator education, updated to use React"}
+                {isDanish ? "Et lille huskespil, som vi skulle lave under web-integrator uddannelsens grundforløbets 2. del, opdateret til at bruge React." : "A small memory game that we had to make during the 2nd part of the basic course for the web-integrator education, updated to use React"}
               </p>
             </section>
           </div>

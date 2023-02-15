@@ -6,7 +6,7 @@ import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <footer>
-      <div>
+      {/* <div id="social_links">
         <a
           id="linkedin"
           href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
       <div id="email">
         <p><FontAwesomeIcon icon={faEnvelope} /> magnusthestrup@hotmail.com</p>
-      </div>
+      </div> */}
     </footer>
   );
 };

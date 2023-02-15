@@ -56,41 +56,19 @@ const Header = () => {
 
   return (
     <header>
-      <nav>
-        <div id="desktop">
+      <div id="header_content">
+        <div id="logo">
+          <img src="logo.png" alt="" />
+          <span>Magnus Holm</span>
+        </div>
+        <nav>
           <ul>
-            <li className={pathname === '/' ? "active" : ""}><Link to={"/"} >{isDanish ? "Hjem" : "Home"}</Link></li>
-            <li className={/projects/g.test(pathname) ? "active" : ""}><Link to={"/projects"} >{isDanish ? "Projekter" : "Projects"}</Link></li>
-            <li className={pathname === '/about-me' ? "active" : ""}><Link to={"/about-me"} >{isDanish ? "Om mig" : "About me"}</Link></li>
-            <li className="languageSwitch">
-              <p>{isDanish ? "Sprog" : "Language"}</p>
-              <button className={isDanish ? "currentLanguage" : ""} onClick={languageSwitchDanish}>Dansk</button>
-              <button className={isDanish ? "" : "currentLanguage"} onClick={languageSwitchEnglish}>English</button>
-            </li>
+            <li><a href="">{isDanish ? "Hjem" : "Home"}</a></li>
+            <li><a href="./#about">{isDanish ? "Om mig" : "About"}</a></li>
+            <li><a href="./#projects">{isDanish ? "Projekter" : "Projects"}</a></li>
           </ul>
-        </div>
-        <div id="mobile_header">
-          <div id="mobile_header_top">
-            <h1>{currentPage}</h1>
-            <FontAwesomeIcon id="mobile_menu_button" icon={faBars} onClick={mobileOpenClose} />
-          </div>
-          <div id="mobile_overlay">
-            <FontAwesomeIcon className="close_button" icon={faX} onClick={mobileOpenClose} />
-            <div id="overlay_content">
-              <ul>
-                <li className={pathname === '/' ? "active" : ""}><Link onClick={mobileOpenClose} to={"/"} >{isDanish ? "Hjem" : "Home"} </Link></li>
-                <li className={/projects/g.test(pathname) ? "active" : ""}><Link onClick={mobileOpenClose} to={"/projects"} >{isDanish ? "Projekter" : "Projects"}</Link></li>
-                <li className={pathname === '/about-me' ? "active" : ""}><Link onClick={mobileOpenClose} to={"/about-me"} >{isDanish ? "Om mig" : "About me"}</Link></li>
-                <li className="languageSwitch">
-                  <p>{isDanish ? "Sprog" : "Language"}</p>
-                  <button className={isDanish ? "currentLanguage" : ""} onClick={languageSwitchDanish}>Dansk</button>
-                  <button className={isDanish ? "" : "currentLanguage"} onClick={languageSwitchEnglish}>English</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header >
   );
 };
