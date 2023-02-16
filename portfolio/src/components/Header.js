@@ -6,8 +6,8 @@ import { useLocation } from "react-router-dom";
 
 
 const Header = () => {
-  var { pathname } = useLocation();
-  var isDanish;
+  let { pathname } = useLocation();
+  let isDanish;
 
   if (localStorage.getItem("isDanish") == null) {
     localStorage.setItem("isDanish", "true")
@@ -34,8 +34,8 @@ const Header = () => {
   }
 
   function mobileOpenClose() {
-    var menu = document.querySelector("#mobile_overlay");
-    var body = document.querySelector("body");
+    let menu = document.querySelector("#mobile_overlay");
+    let body = document.querySelector("body");
     if (menu.style.width === "100%") {
       menu.style.width = "0";
       body.style.overflow = "visible";

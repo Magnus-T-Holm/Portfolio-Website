@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutMe = () => {
-  var isDanish;
+  let isDanish;
 
   if (localStorage.getItem("isDanish") === "true") {
     isDanish = true

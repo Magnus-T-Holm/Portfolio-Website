@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = (data, key) => {
-  var card_name;
+  let card_name;
   if (isNaN(parseInt(data.rank)) === true) {
     if (data.rank === "gray" || data.suit === "back") {
       card_name = "Card back";

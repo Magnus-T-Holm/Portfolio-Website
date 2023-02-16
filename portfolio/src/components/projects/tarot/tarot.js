@@ -157,7 +157,7 @@ const Tarot = () => {
       // Check if draw_amount is an allowed number
       if (target.current.value === "" || target.current.value <= 0) {
       } else {
-        var newCards = deck.draw(draw_amount);
+        let newCards = deck.draw(draw_amount);
         setCurrent_cards(newCards);
         setDeck_size(deck.remainingLength);
       }

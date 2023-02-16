@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 const MemoryGame = () => {
-  var tileImgs = [
+  let tileImgs = [
     "Death",
     "Judgement",
     "Justice",
@@ -24,9 +24,9 @@ const MemoryGame = () => {
     "The World",
     "Wheel of Fortune",
   ];
-  var tilesFlipped = [];
-  var tilesMatch = [];
-  var i;
+  let tilesFlipped = [];
+  let tilesMatch = [];
+  let i;
 
   useEffect(() => {
     document.querySelector("#game_board").addEventListener("click", flipTile);
@@ -42,10 +42,10 @@ const MemoryGame = () => {
     document.querySelector("#game_intro").classList.add("hidden");
     document.querySelector("#game_board").classList.remove("hidden");
 
-    var gameTiles = document.querySelector("#playGame").level.value;
-    var gameTileImgs = tileImgs.slice(0, gameTiles / 2);
+    let gameTiles = document.querySelector("#playGame").level.value;
+    let gameTileImgs = tileImgs.slice(0, gameTiles / 2);
     gameTileImgs = gameTileImgs.doubleShuffle();
-    var content;
+    let content;
     for (i = 0; i < gameTileImgs.length; i += 1) {
       content = "";
       content += "<section>";
@@ -63,13 +63,13 @@ const MemoryGame = () => {
   }
 
   Array.prototype.doubleShuffle = function () {
-    var d;
+    let d;
     for (d = 0; d < this.length; d += 2) {
       this.splice(d + 1, 0, this[d]);
     }
     i = this.length;
-    var j;
-    var temp;
+    let j;
+    let temp;
     while (--i > 0) {
       j = Math.floor(Math.random() * (i + 1));
       temp = this[j];
@@ -98,7 +98,7 @@ const MemoryGame = () => {
   }
 
   function flipBack() {
-    var tiles = document
+    let tiles = document
       .querySelector("#game_board")
       .querySelectorAll("section");
     tiles[tilesFlipped[0]].classList.remove("flipped");
@@ -125,7 +125,7 @@ const MemoryGame = () => {
   }
 
   function flipTile(event) {
-    var tiles = Array.from(document.querySelectorAll("section"));
+    let tiles = Array.from(document.querySelectorAll("section"));
     if (event.target !== event.currentTarget) {
       if (event.target.nodeName !== "IMG") {
         event.target.parentNode.classList.add("flipped");

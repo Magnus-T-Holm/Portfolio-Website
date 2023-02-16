@@ -5,7 +5,7 @@ import { faGithubSquare, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
-  var isDanish;
+  let isDanish;
 
   if (localStorage.getItem("isDanish") === "true") {
     isDanish = true

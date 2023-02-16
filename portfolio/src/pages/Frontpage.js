@@ -1,5 +1,5 @@
 const Frontpage = () => {
-  var isDanish;
+  let isDanish;
 
   if (localStorage.getItem("isDanish") === "true") {
     isDanish = true
@@ -8,12 +8,15 @@ const Frontpage = () => {
   }
   return (
     <main id="frontpage">
-      {/* <div id="frontpage_text">
-        <h1>Magnus Holm</h1>
-        <h2>{isDanish ? "En Front-end Webudvikler" : "A Front-end Webdeveloper"}</h2>
-        <h3>{isDanish ? "Velkommen til min portfolio" : "Welcome to my portfolio"}</h3>
-        <p>{isDanish ? "Her vil du finde nogle af de projekter jeg har lave, samt noget information om mig" : "Here you will find some of the projects I have done, as well as some information about me"}</p>
-      </div> */}
+      <section id="home">
+        <h1>{isDanish ? "Hej, mit navn er " : "Hello there, I'm "} Magnus Holm</h1>
+        <p>{isDanish ? "En frontend web udvikler" : "A frontend web developer"}</p>
+        <a href="./#projects">{isDanish ? "Projekter" : "Projects"}</a>
+      </section>
+      <section id="about">
+        <h2>{isDanish ? "Om mig" : "About me"}</h2>
+      </section>
+      <section id="projects"></section>
     </main>
   );
 };
