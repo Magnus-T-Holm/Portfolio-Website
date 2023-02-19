@@ -11,7 +11,14 @@
   /* --other: #1F2833; */
 }
 
-
+/* way the hell off screen */
+.scrollbar-measure {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+}
 
 /*-------------------------------- Desktop --------------------------------*/
 
@@ -45,35 +52,45 @@ header {
   font-size: x-large;
 }
 
-#header_content nav ul {
+/*---------------------- Frontpage ----------------------*/
+/*-------- Main --------*/
+main {
   display: flex;
+  margin-top: 80px;
 }
 
-#header_content nav ul li {
+/*-------- Aside / Nav --------*/
+aside {
+  width: 200px;
+  text-align: center;
+  position: fixed;
+}
+
+aside ul {
   list-style: none;
 }
 
-#header_content ul li a {
-  display: inline-block;
+aside ul li a {
   color: var(--text);
   text-decoration: none;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 2.2rem 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: xx-large;
 }
 
-
-/*---------------------- Frontpage ----------------------*/
-main {
-  margin-top: 110px;
+/*------------ Sections ------------*/
+/*-------- General --------*/
+#section_wrapper {
+  width: calc(100vw - 200px);
+  /* Makes the sections take up 100% of the 
+  available space between the aside and scrollbar */
+  position: relative;
+  left: 200px;
 }
 
+/*-------- Home --------*/
 #home {
-  /* background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../public/background.svg");
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../public/background.svg");
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,6 +117,7 @@ main {
   padding: 20px 30px;
 }
 
+/*-------- About --------*/
 #about,
 #projects {
   display: flex;
@@ -107,6 +125,7 @@ main {
   align-items: center;
 }
 
+/*-------- Projects --------*/
 h2 {
   text-transform: uppercase;
   font-size: xx-large;

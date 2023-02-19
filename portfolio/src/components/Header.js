@@ -1,7 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 
 
@@ -17,20 +14,6 @@ const Header = () => {
     isDanish = true
   } else {
     isDanish = false
-  }
-
-  function languageSwitchDanish() {
-    if (localStorage.getItem("isDanish") === "false") {
-      localStorage.setItem("isDanish", "true")
-      window.location.reload();
-    }
-  }
-
-  function languageSwitchEnglish() {
-    if (localStorage.getItem("isDanish") === "true") {
-      localStorage.setItem("isDanish", "false")
-      window.location.reload();
-    }
   }
 
   function mobileOpenClose() {
@@ -61,13 +44,6 @@ const Header = () => {
           <img src="logo.png" alt="" />
           <span>Magnus Holm</span>
         </div>
-        <nav>
-          <ul>
-            <li><a href="">{isDanish ? "Hjem" : "Home"}</a></li>
-            <li><a href="./#about">{isDanish ? "Om mig" : "About"}</a></li>
-            <li><a href="./#projects">{isDanish ? "Projekter" : "Projects"}</a></li>
-          </ul>
-        </nav>
       </div>
     </header >
   );

@@ -37,7 +37,7 @@ function App() {
           <Route path="/projects/tarot" element={<Tarot />} />
           <Route path="/projects/memory-game" element={<MemoryGame />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/about-me" element={<AboutMe />} /> */}
+        <Route path="/about-me" element={<AboutMe />} /> */}
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
