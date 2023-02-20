@@ -56,34 +56,45 @@ header {
 /*-------- Main --------*/
 main {
   display: flex;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 
 /*-------- Aside / Nav --------*/
 aside {
   width: 200px;
+  height: 100%;
   text-align: center;
   position: fixed;
+  top: 0;
+  background-color: #4d4d4d;
+  color: whitesmoke;
+}
+
+#nav_open_button {
+  font-size: xx-large;
 }
 
 aside ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: baseline;
+  margin-left: 30px;
 }
 
 aside ul li a {
-  color: var(--text);
+  color: whitesmoke;
   text-decoration: none;
   font-size: xx-large;
+  text-transform: uppercase;
 }
 
 /*------------ Sections ------------*/
 /*-------- General --------*/
 #section_wrapper {
-  width: calc(100vw - 200px);
-  /* Makes the sections take up 100% of the 
-  available space between the aside and scrollbar */
-  position: relative;
-  left: 200px;
+  width: 100%;
+  margin-left: 200px;
 }
 
 /*-------- Home --------*/
@@ -94,7 +105,8 @@ aside ul li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 110px);
+  /* height: calc(100vh - 80px); */
+  height: 100vh;
 }
 
 #home h1 {

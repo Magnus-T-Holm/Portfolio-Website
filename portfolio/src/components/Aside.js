@@ -1,10 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Aside = () => {
-
-  let { pathname } = useLocation();
-
   let isDanish;
 
   if (localStorage.getItem("isDanish") == null) {
@@ -31,7 +29,7 @@ const Aside = () => {
     }
   }
 
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   function glitchText(e) {
     let interval = null;
@@ -48,7 +46,7 @@ const Aside = () => {
               return e.target.dataset.english[index];
             }
           }
-          return letters[Math.floor(Math.random() * 52)]
+          return letters[Math.floor(Math.random() * 26)]
         })
         .join("");
       if (isDanish) {
@@ -66,9 +64,10 @@ const Aside = () => {
 
   return (
     <aside>
+      <FontAwesomeIcon icon={faBars} id="nav_open_button" />
       <nav>
         <ul>
-          <li><a href="" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</a></li>
+          <li><a href="./#" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</a></li>
           <li><a href="./#about" data-danish="Om mig" data-english="About" onPointerEnter={glitchText}>{isDanish ? "Om mig" : "About"}</a></li>
           <li><a href="./#projects" data-danish="Projekter" data-english="Projects" onPointerEnter={glitchText}>{isDanish ? "Projekter" : "Projects"}</a></li>
         </ul>
