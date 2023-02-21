@@ -61,17 +61,31 @@ main {
 
 /*-------- Aside / Nav --------*/
 aside {
-  width: 200px;
   height: 100%;
-  text-align: center;
   position: fixed;
   top: 0;
   background-color: #4d4d4d;
   color: whitesmoke;
 }
 
-#nav_open_button {
+aside svg {
   font-size: xx-large;
+  padding: 20px 20px 100vh 20px;
+  cursor: pointer;
+}
+
+.menu_open_button {
+  padding: 20px;
+}
+
+.menu_closed {
+  display: none;
+}
+
+aside nav {
+  width: 220px;
+  margin-left: 30px;
+
 }
 
 aside ul {
@@ -79,8 +93,6 @@ aside ul {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  align-items: baseline;
-  margin-left: 30px;
 }
 
 aside ul li a {
@@ -90,11 +102,28 @@ aside ul li a {
   text-transform: uppercase;
 }
 
+#language_selectors {
+  margin-top: 40px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#language_selectors a {
+  text-decoration: none;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
 /*------------ Sections ------------*/
 /*-------- General --------*/
-#section_wrapper {
+main>div {
   width: 100%;
-  margin-left: 200px;
+  margin-left: 250px;
+}
+
+main .menu_closed_wrapper {
+  margin-left: 68px;
 }
 
 /*-------- Home --------*/

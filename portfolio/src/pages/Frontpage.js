@@ -12,9 +12,9 @@ const Frontpage = () => {
   return (
     <main id="frontpage">
       <Aside />
-      <div id="section_wrapper">
+      <div id="section_wrapper" className="menu_closed_wrapper">
         <section id="home">
-          <h1>{isDanish ? "Hej, mit navn er " : "Hello there, I'm "} Magnus Holm</h1>
+          <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus Holm</h1>
           <p>{isDanish ? "En frontend web udvikler" : "A frontend web developer"}</p>
           <a href="./#projects">{isDanish ? "Projekter" : "Projects"}</a>
         </section>
