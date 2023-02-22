@@ -16,15 +16,18 @@ const Aside = () => {
   }
 
   function menuOpenClose() {
+    const aside = document.querySelector("aside");
     const nav = document.querySelector("nav");
     const menu_button = document.querySelector("#menu_button");
     const section_wrapper = document.querySelector("#section_wrapper");
     if (nav.classList.contains("menu_closed")) {
       menu_button.classList.add("menu_open_button");
+      aside.classList.add("aside_open");
       nav.classList.remove("menu_closed");
       section_wrapper.classList.remove("menu_closed_wrapper");
     } else {
       menu_button.classList.remove("menu_open_button");
+      aside.classList.remove("aside_open");
       nav.classList.add("menu_closed");
       section_wrapper.classList.add("menu_closed_wrapper");
     }

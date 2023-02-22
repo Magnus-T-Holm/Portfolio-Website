@@ -61,11 +61,13 @@ main {
 
 /*-------- Aside / Nav --------*/
 aside {
+  width: 68px;
   height: 100%;
   position: fixed;
   top: 0;
   background-color: #4d4d4d;
   color: whitesmoke;
+  transition: width 1s;
 }
 
 aside svg {
@@ -74,18 +76,24 @@ aside svg {
   cursor: pointer;
 }
 
+.aside_open {
+  width: 250px;
+}
+
 .menu_open_button {
   padding: 20px;
 }
 
 .menu_closed {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 aside nav {
-  width: 220px;
+  opacity: 1;
   margin-left: 30px;
-
+  visibility: visible;
+  transition: visibility 1s, opacity 1s;
 }
 
 aside ul {
@@ -120,6 +128,7 @@ aside ul li a {
 main>div {
   width: 100%;
   margin-left: 250px;
+  transition: margin-left 1s;
 }
 
 main .menu_closed_wrapper {
