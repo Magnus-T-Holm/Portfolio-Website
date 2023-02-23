@@ -87,13 +87,14 @@ aside svg {
 .menu_closed {
   visibility: hidden;
   opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 
 aside nav {
+  visibility: visible;
   opacity: 1;
   margin-left: 30px;
-  visibility: visible;
-  transition: visibility 1s, opacity 1s;
+  transition: opacity 2s linear;
 }
 
 aside ul {
@@ -135,6 +136,29 @@ main .menu_closed_wrapper {
   margin-left: 68px;
 }
 
+h2 {
+  text-transform: uppercase;
+  font-size: xx-large;
+  margin-top: 130px;
+  text-align: center;
+}
+
+#about,
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
+#section_wrapper span {
+  font-size: larger;
+}
+
+#about span,
+#projects span {
+  text-align: center;
+  margin: 50px 0;
+}
+
 /*-------- Home --------*/
 #home {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../public/background.svg");
@@ -153,10 +177,6 @@ main .menu_closed_wrapper {
   margin-top: 150px;
 }
 
-#home p {
-  font-size: larger;
-}
-
 #home a {
   font-size: x-large;
   text-transform: uppercase;
@@ -168,19 +188,23 @@ main .menu_closed_wrapper {
 }
 
 /*-------- About --------*/
-#about,
-#projects {
+
+#info_skills_container {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#info,
+#skills {
+  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 /*-------- Projects --------*/
-h2 {
-  text-transform: uppercase;
-  font-size: xx-large;
-  margin-top: 150px;
-}
+
 
 /*---------------------- Card drawing app ----------------------*/
 #card_draw {
