@@ -189,23 +189,42 @@ h2 {
 
 /*-------- About --------*/
 
-#info_skills_container {
+#about_me_skills_container {
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
 }
 
-#info_skills_container h3 {
+#about_me_skills_container h3 {
   font-size: x-large;
   margin-bottom: 30px;
 }
 
-#info,
+#about_me,
 #skills {
   width: 40%;
+
+}
+
+.info {
+  font-size: larger;
+  color: #666;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+#skill_list {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
+}
+
+.skill {
+  background: rgba(153, 153, 153, .2);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #666;
+  margin: 0 10px 15px 0;
 }
 
 /*-------- Projects --------*/
