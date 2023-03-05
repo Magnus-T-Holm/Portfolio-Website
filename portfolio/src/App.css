@@ -11,15 +11,6 @@
   /* --other: #1F2833; */
 }
 
-/* way the hell off screen */
-.scrollbar-measure {
-  width: 100px;
-  height: 100px;
-  overflow: scroll;
-  position: absolute;
-  top: -9999px;
-}
-
 /*-------------------------------- Desktop --------------------------------*/
 
 /*----------- Header -----------*/
@@ -111,7 +102,8 @@ aside ul li a {
   text-transform: uppercase;
 }
 
-#language_selectors {
+#language_selectors,
+#social_links {
   margin-top: 40px;
   margin-right: 30px;
   display: flex;
@@ -122,6 +114,24 @@ aside ul li a {
   text-decoration: none;
   color: whitesmoke;
   text-transform: uppercase;
+}
+
+#social_links a,
+#email p {
+  color: whitesmoke;
+}
+
+#social_links svg,
+#email svg {
+  padding: 0;
+}
+
+#social_links {
+  padding: 0 40px;
+}
+
+#social_links svg {
+  font-size: 40px;
 }
 
 /*------------ Sections ------------*/
@@ -228,7 +238,10 @@ h2 {
 }
 
 /*-------- Projects --------*/
-
+.project_container {
+  display: flex;
+  padding: 0 20px;
+}
 
 /*---------------------- Card drawing app ----------------------*/
 #card_draw {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Aside from "../components/Aside";
 import $ from 'jquery';
 
@@ -58,7 +59,26 @@ const Frontpage = () => {
         </section>
         <section id="projects">
           <h2>{isDanish ? "Projekter" : "Projects"}</h2>
-
+          <div className="project_container">
+            <img src="dummy.png" alt="" />
+            <div className="project_info">
+              <Link className="project_title" to="/projects/memory-game">
+                {isDanish ? "Huskespil projekt v1.5" : "Memory game project v1.5"}
+              </Link>
+              <p className="site_info">
+                {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
+              </p>
+              <p className="site_info">{isDanish ? "Sprog: Dansk og engelsk" : "Language: Danish and English"}</p>
+              <div className="project_description">
+                <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
+                <section>
+                  <p>
+                    {isDanish ? "Et lille huskespil, som vi skulle lave under web-integrator uddannelsens grundforløbets 2. del, opdateret til at bruge React." : "A small memory game that we had to make during the 2nd part of the basic course for the web-integrator education, updated to use React"}
+                  </p>
+                </section>
+              </div>
+            </div>
+          </div>
         </section>
       </div >
     </main >

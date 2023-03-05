@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import $ from 'jquery';
 
 const Aside = () => {
@@ -83,6 +84,21 @@ const Aside = () => {
           <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
           <span>|</span>
           <a href="./#" onClick={languageSwitchEnglish}>English</a>
+        </div>
+        <div id="social_links">
+          <a
+            id="linkedin"
+            href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a id="github" href="https://github.com/Magnus-T-Holm" target="blank">
+            <FontAwesomeIcon icon={faGithubSquare} />
+          </a>
+        </div>
+        <div id="email">
+          <FontAwesomeIcon icon={faEnvelope} />
+          <p>magnusthestrup@hotmail.com</p>
         </div>
       </nav>
     </aside>
