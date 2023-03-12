@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Aside from "../components/Aside";
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const Frontpage = () => {
   let isDanish;
@@ -11,17 +11,17 @@ const Frontpage = () => {
     isDanish = false
   }
 
-  function menuClose() {
-    $("#menu_button").removeClass("menu_open_button");
-    $("aside").removeClass("aside_open");
-    $("nav").addClass("menu_closed");
-    $("#section_wrapper").addClass("menu_closed_wrapper");
-  }
+  // function menuClose() {
+  //   $("#menu_button").removeClass("menu_open_button");
+  //   $("aside").removeClass("aside_open");
+  //   $("nav").addClass("menu_closed");
+  //   $("#section_wrapper").addClass("menu_closed_wrapper");
+  // }
 
   return (
     <main id="frontpage">
       <Aside />
-      <div id="section_wrapper" className="menu_closed_wrapper" onClick={menuClose}>
+      <div id="section_wrapper" className="menu_closed_wrapper">
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>
