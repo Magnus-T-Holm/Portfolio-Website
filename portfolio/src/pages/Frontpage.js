@@ -11,17 +11,18 @@ const Frontpage = () => {
     isDanish = false
   }
 
-  // function menuClose() {
-  //   $("#menu_button").removeClass("menu_open_button");
-  //   $("aside").removeClass("aside_open");
-  //   $("nav").addClass("menu_closed");
-  //   $("#section_wrapper").addClass("menu_closed_wrapper");
-  // }
+  let asideOpen;
+
+  if (localStorage.getItem("menuStatus") === "open") {
+    asideOpen = true
+  } else {
+    asideOpen = false
+  }
 
   return (
     <main id="frontpage">
       <Aside />
-      <div id="section_wrapper" className="menu_closed_wrapper">
+      <div id="section_wrapper" className={asideOpen ? "" : "menu_closed_wrapper"}>
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>

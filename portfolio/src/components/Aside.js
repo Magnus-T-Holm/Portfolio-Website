@@ -11,17 +11,11 @@ const Aside = () => {
     localStorage.setItem("isDanish", "true")
   }
 
+
   if (localStorage.getItem("isDanish") === "true") {
     isDanish = true
   } else {
     isDanish = false
-  }
-
-  function menuOpenClose() {
-    $("#menu_button").toggleClass("menu_open_button");
-    $("aside").toggleClass("aside_open");
-    $("nav").toggleClass("menu_closed");
-    $("#section_wrapper").toggleClass("menu_closed_wrapper");
   }
 
   function languageSwitchDanish() {
@@ -35,6 +29,30 @@ const Aside = () => {
     if (localStorage.getItem("isDanish") === "true") {
       localStorage.setItem("isDanish", "false")
       window.location.reload();
+    }
+  }
+
+  let asideOpen;
+
+  if (localStorage.getItem("menuStatus") == null) {
+    localStorage.setItem("menuStatus", "closed")
+  }
+
+  if (localStorage.getItem("menuStatus") === "open") {
+    asideOpen = true
+  } else {
+    asideOpen = false
+  }
+
+  function menuOpenClose() {
+    $("#menu_button").toggleClass("menu_open_button");
+    $("aside").toggleClass("aside_open");
+    $("nav").toggleClass("menu_closed");
+    $("#section_wrapper").toggleClass("menu_closed_wrapper");
+    if (localStorage.getItem("menuStatus") == "open") {
+      localStorage.setItem("menuStatus", "closed")
+    } else {
+      localStorage.setItem("menuStatus", "open")
     }
   }
 
@@ -72,9 +90,9 @@ const Aside = () => {
   }
 
   return (
-    <aside>
-      <FontAwesomeIcon icon={faBars} id="menu_button" onClick={menuOpenClose} />
-      <nav className="menu_closed">
+    <aside className={asideOpen ? "aside_open" : ""}>
+      <FontAwesomeIcon icon={faBars} id="menu_button" onClick={menuOpenClose} className={asideOpen ? "menu_open_button" : ""} />
+      <nav className={asideOpen ? "" : "menu_closed"}>
         <ul>
           <li><a href="./#" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</a></li>
           <li><a href="./#about" data-danish="Om mig" data-english="About" onPointerEnter={glitchText}>{isDanish ? "Om mig" : "About"}</a></li>
