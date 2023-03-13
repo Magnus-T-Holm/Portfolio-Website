@@ -11,18 +11,18 @@ const Frontpage = () => {
     isDanish = false
   }
 
-  let asideOpen;
+  // let asideOpen;
 
-  if (localStorage.getItem("menuStatus") === "open") {
-    asideOpen = true
-  } else {
-    asideOpen = false
-  }
+  // if (localStorage.getItem("menuStatus") === "open") {
+  //   asideOpen = true
+  // } else {
+  //   asideOpen = false
+  // }
 
   return (
     <main id="frontpage">
       <Aside />
-      <div id="section_wrapper" className={asideOpen ? "" : "menu_closed_wrapper"}>
+      <div id="section_wrapper" /*className={asideOpen ? "" : "menu_closed_wrapper"}*/>
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>
@@ -60,16 +60,13 @@ const Frontpage = () => {
         </section>
         <section id="projects">
           <h2>{isDanish ? "Projekter" : "Projects"}</h2>
+          {/* Memory Game */}
           <div className="project_container">
-            <img src="dummy.png" alt="" />
+            <img src="memory.jpg" alt="" />
             <div className="project_info">
               <Link className="project_title" to="/projects/memory-game">
                 {isDanish ? "Huskespil projekt v1.5" : "Memory game project v1.5"}
               </Link>
-              <p className="site_info">
-                {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
-              </p>
-              <p className="site_info">{isDanish ? "Sprog: Dansk og engelsk" : "Language: Danish and English"}</p>
               <div className="project_description">
                 <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
                 <section>
@@ -77,6 +74,64 @@ const Frontpage = () => {
                     {isDanish ? "Et lille huskespil, som vi skulle lave under web-integrator uddannelsens grundforløbets 2. del, opdateret til at bruge React." : "A small memory game that we had to make during the 2nd part of the basic course for the web-integrator education, updated to use React"}
                   </p>
                 </section>
+              </div>
+              <div className="project_extra_details">
+                <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
+                <p className="site_info">
+                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                </p>
+                <p className="site_info">{isDanish ? "Sprog: Dansk og engelsk" : "Language: Danish and English"}</p>
+              </div>
+            </div>
+          </div>
+          {/* Playing card drawing */}
+          <div className="project_container">
+            <img src="card_draw.jpg" alt="" />
+            <div className="project_info">
+              <Link className="project_title" to="/projects/card-draw">
+                {isDanish ? "Spillekort projekt v1.0" : "Playing card project v1.0"}
+              </Link>
+              <div className="project_description">
+                <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
+                <section>
+                  <p>
+                    {isDanish ? "Et lille simpelt projekt jeg har lavet, hvor man kan trække kort fra et deck kort." : "A small simple project I have made, where you can draw cards from a deck of cards."}
+                  </p>
+                </section>
+              </div>
+              <div className="project_extra_details">
+                <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
+                <p className="site_info">
+                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                </p>
+                <p className="site_info">{isDanish ? "Sprog: Engelsk" : "Language: English"}</p>
+              </div>
+            </div>
+          </div>
+          {/* Major Arcana */}
+          <div className="project_container">
+            <img src="tarot.jpg" alt="" />
+            <div className="project_info">
+              <Link className="project_title" to="/projects/tarot">
+                {isDanish ? "Major Arcana Tarot projekt v1.0" : "Major Arcana Tarot project v1.0"}
+              </Link>
+              <div className="project_description">
+                <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
+                <section>
+                  <p>
+                    {isDanish ? "Et lille simpelt projekt jeg har lavet, hvor man kan trække kort fra et deck som indeholder major arcana tarot kort." : "A small simple project I have made, where you can draw cards from a deck that contains major arcana tarot cards."}
+                  </p>
+                  <p>
+                    {isDanish ? "Der er også en checkbox, som kan toggle om man vil se et korts Deck of Many Things effekt fra Dungeons & Dragons 5e." : "There is also a checkbox that can toggle whether you want to see a card's Deck of Many Things effect from Dungeons & Dragons 5e."}
+                  </p>
+                </section>
+              </div>
+              <div className="project_extra_details">
+                <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
+                <p className="site_info">
+                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                </p>
+                <p className="site_info">{isDanish ? "Sprog: Engelsk" : "Language: English"}</p>
               </div>
             </div>
           </div>

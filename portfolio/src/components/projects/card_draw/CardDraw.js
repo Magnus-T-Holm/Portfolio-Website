@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { decks } from "cards";
 
+import Aside from "../../Aside";
 import Card from "./Card";
 
 const CardDraw = () => {
@@ -49,42 +50,45 @@ const CardDraw = () => {
   }
 
   return (
-    <main id="card_draw">
-      <aside id="controls">
-        <button onClick={draw_cards}>Draw Cards</button>
-        <div id="draw_amount_container">
-          <label htmlFor="draw_amount">Amount of cards to draw</label>
-          <input
-            ref={target}
-            type="number"
-            name="draw_amount"
-            id="draw_amount"
-            min="1"
-            defaultValue="1"
-            onChange={updateDrawAmount}
-          />
-          <p ref={wrong_input} id="wrong_input">
-            The amount of cards you want to draw is either not a number or a
-            negative number. <br /> Please enter a positive number in the input
-            field above.
-          </p>
-        </div>
-        <button onClick={reset_deck}>Reset Deck</button>
-      </aside>
-
-      <div id="card_area_container">
-        <p>
-          Cards left: <span>{deck_size}</span>/52
-        </p>
-        <div id="card_area">
-          {current_cards.map((card, i) => (
-            <Card
-              rank={card.rank.shortName}
-              rankLong={card.rank.longName}
-              suit={card.suit.name}
-              key={i}
+    <main >
+      <Aside />
+      <div id="card_draw">
+        <aside id="controls">
+          <button onClick={draw_cards}>Draw Cards</button>
+          <div id="draw_amount_container">
+            <label htmlFor="draw_amount">Amount of cards to draw</label>
+            <input
+              ref={target}
+              type="number"
+              name="draw_amount"
+              id="draw_amount"
+              min="1"
+              defaultValue="1"
+              onChange={updateDrawAmount}
             />
-          ))}
+            <p ref={wrong_input} id="wrong_input">
+              The amount of cards you want to draw is either not a number or a
+              negative number. <br /> Please enter a positive number in the input
+              field above.
+            </p>
+          </div>
+          <button onClick={reset_deck}>Reset Deck</button>
+        </aside>
+
+        <div id="card_area_container">
+          <p>
+            Cards left: <span>{deck_size}</span>/52
+          </p>
+          <div id="card_area">
+            {current_cards.map((card, i) => (
+              <Card
+                rank={card.rank.shortName}
+                rankLong={card.rank.longName}
+                suit={card.suit.name}
+                key={i}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </main>

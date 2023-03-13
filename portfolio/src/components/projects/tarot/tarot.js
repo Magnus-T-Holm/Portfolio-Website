@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Deck } from "cards";
 import TarotCard from "./TarotCard";
+import Aside from "../../Aside";
+
 
 const Tarot = () => {
   const [deck] = useState(
@@ -211,58 +213,61 @@ const Tarot = () => {
   }
 
   return (
-    <main id="card_draw">
-      <aside id="controls">
-        <button onClick={draw_cards}>Draw Cards</button>
-        <div id="draw_amount_container">
-          <label htmlFor="draw_amount">Amount of cards to draw</label>
-          <input
-            ref={target}
-            type="number"
-            name="draw_amount"
-            id="draw_amount"
-            min="1"
-            defaultValue="1"
-            onChange={updateDrawAmount}
-          />
-          <p ref={wrong_input} id="wrong_input">
-            The amount of cards you want to draw is either not a number or a
-            negative number. Please enter a positive number in the input field
-            above.
-          </p>
-        </div>
-        <div id="card_art_container">
-          <label htmlFor="card_art">Card art style</label>
-          <select name="card_art" id="card_art" onChange={updateCardStyle}>
-            <option value="classic">Classic</option>
-            <option value="ds">Dark Souls</option>
-            <option value="fma">Fullmetal Alchemist</option>
-          </select>
-        </div>
-        <div id="showDomt">
-          <label htmlFor="domt">Show Deck of Many Things text?</label>
-          <input type="checkbox" name="domt" id="domt" onChange={updateDomt} />
-        </div>
-        <button onClick={reset_deck}>Reset</button>
-        <div id="art_credits">
-          <p>Art credits</p>
-          <p>
-            Dark Souls art:{" "}
-            <a href="https://www.artstation.com/steftastan" target="blank">Stef Tastan</a>
-          </p>
-          <p>
-            Fullmetal Alchemist art:{" "}
-            <a href="https://twitter.com/emmmerald_" target="blank">Emmmerald_</a>
-          </p>
-        </div>
-      </aside>
+    <main>
+      <Aside />
+      <div id="card_draw">
+        <aside id="controls">
+          <button onClick={draw_cards}>Draw Cards</button>
+          <div id="draw_amount_container">
+            <label htmlFor="draw_amount">Amount of cards to draw</label>
+            <input
+              ref={target}
+              type="number"
+              name="draw_amount"
+              id="draw_amount"
+              min="1"
+              defaultValue="1"
+              onChange={updateDrawAmount}
+            />
+            <p ref={wrong_input} id="wrong_input">
+              The amount of cards you want to draw is either not a number or a
+              negative number. Please enter a positive number in the input field
+              above.
+            </p>
+          </div>
+          <div id="card_art_container">
+            <label htmlFor="card_art">Card art style</label>
+            <select name="card_art" id="card_art" onChange={updateCardStyle}>
+              <option value="classic">Classic</option>
+              <option value="ds">Dark Souls</option>
+              <option value="fma">Fullmetal Alchemist</option>
+            </select>
+          </div>
+          <div id="showDomt">
+            <label htmlFor="domt">Show Deck of Many Things text?</label>
+            <input type="checkbox" name="domt" id="domt" onChange={updateDomt} />
+          </div>
+          <button onClick={reset_deck}>Reset</button>
+          <div id="art_credits">
+            <p>Art credits</p>
+            <p>
+              Dark Souls art:{" "}
+              <a href="https://www.artstation.com/steftastan" target="blank">Stef Tastan</a>
+            </p>
+            <p>
+              Fullmetal Alchemist art:{" "}
+              <a href="https://twitter.com/emmmerald_" target="blank">Emmmerald_</a>
+            </p>
+          </div>
+        </aside>
 
-      <div id="card_area_container">
-        <p>
-          Cards left: <span>{deck_size}</span>/22
-        </p>
-        <div id="card_area">
-          <LoadCards />
+        <div id="card_area_container">
+          <p>
+            Cards left: <span>{deck_size}</span>/22
+          </p>
+          <div id="card_area">
+            <LoadCards />
+          </div>
         </div>
       </div>
     </main>

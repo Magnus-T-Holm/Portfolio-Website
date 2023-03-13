@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import Aside from "../../Aside";
+
+
 const MemoryGame = () => {
   let tileImgs = [
     "Death",
@@ -138,37 +141,42 @@ const MemoryGame = () => {
 
   return (
     <main id="memory_game">
-      <div id="game_intro">
-        <h1>Huske Spil V1</h1>
-        <p>Vælg antallet af brikker i spillet</p>
-        <form id="playGame">
-          <div>
-            <input
-              type="radio"
-              name="level"
-              id="eight"
-              value="8"
-              defaultChecked
-            />
-            <label htmlFor="eight">8</label>
-            <input type="radio" name="level" value="14" id="fourteen" />
-            <label htmlFor="fourteen">14</label>
-            <input type="radio" name="level" value="20" id="twenty" />
-            <label htmlFor="twenty">20</label>
-            <input type="radio" name="level" value="32" id="thirtytwo" />
-            <label htmlFor="thirtytwo">32</label>
-            <input type="radio" name="level" value="44" id="fortyfour" />
-            <label htmlFor="fortyfour">44</label>
-          </div>
+      <Aside />
 
-          <button type="submit">Spil</button>
-        </form>
+      <div id="section_wrapper">
+        <div id="game_intro">
+          <h1>Huske Spil V1</h1>
+          <p>Vælg antallet af brikker i spillet</p>
+          <form id="playGame">
+            <div>
+              <input
+                type="radio"
+                name="level"
+                id="eight"
+                value="8"
+                defaultChecked
+              />
+              <label htmlFor="eight">8</label>
+              <input type="radio" name="level" value="14" id="fourteen" />
+              <label htmlFor="fourteen">14</label>
+              <input type="radio" name="level" value="20" id="twenty" />
+              <label htmlFor="twenty">20</label>
+              <input type="radio" name="level" value="32" id="thirtytwo" />
+              <label htmlFor="thirtytwo">32</label>
+              <input type="radio" name="level" value="44" id="fortyfour" />
+              <label htmlFor="fortyfour">44</label>
+            </div>
+
+            <button type="submit">Spil</button>
+          </form>
+        </div>
+        <div id="game_end">
+          <p>Du vandt</p>
+          <button>Tilbage til brik menuen</button>
+        </div>
+        <div id="game_board" className="hidden"></div>
       </div>
-      <div id="game_end">
-        <p>Du vandt</p>
-        <button>Tilbage til brik menuen</button>
-      </div>
-      <div id="game_board" className="hidden"></div>
+
     </main>
   );
 };
