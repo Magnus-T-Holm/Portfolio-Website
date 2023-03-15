@@ -7,7 +7,7 @@ import {
 
 // ------------------------- Main Page -------------------------
 // Univesal
-// import Header from "./components/Header";
+import Header from "./components/Header";
 
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"
@@ -31,7 +31,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <UpdateTitle />
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path="/" element={<Frontpage />} />
           <Route path="/projects/card-draw" element={<CardDraw />} />

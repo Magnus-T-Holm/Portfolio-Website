@@ -1,19 +1,35 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 
 
 const Header = () => {
-  let { pathname } = useLocation();
   let isDanish;
 
   if (localStorage.getItem("isDanish") == null) {
     localStorage.setItem("isDanish", "true")
   }
 
+
   if (localStorage.getItem("isDanish") === "true") {
     isDanish = true
   } else {
     isDanish = false
+  }
+
+  function languageSwitchDanish() {
+    if (localStorage.getItem("isDanish") === "false") {
+      localStorage.setItem("isDanish", "true")
+      window.location.reload();
+    }
+  }
+
+  function languageSwitchEnglish() {
+    if (localStorage.getItem("isDanish") === "true") {
+      localStorage.setItem("isDanish", "false")
+      window.location.reload();
+    }
   }
 
   function mobileOpenClose() {
@@ -28,21 +44,30 @@ const Header = () => {
     }
   }
 
-  let currentPage;
-  if (pathname === '/about-me') {
-    currentPage = isDanish ? "Om mig" : "About me";
-  } else if (/projects/g.test(pathname)) {
-    currentPage = isDanish ? "Projekter" : "Projects";
-  } else {
-    currentPage = isDanish ? "Hjem" : "Home";
-  }
-
   return (
     <header>
-      <div id="header_content">
-        <div id="logo">
-          <img src="logo.png" alt="" />
-          <span>Magnus Holm</span>
+      <div id="mobile_header">
+        <FontAwesomeIcon icon={faBars} id="open_button" onClick={mobileOpenClose} />
+      </div>
+      <div id="mobile_overlay">
+        <FontAwesomeIcon icon={faXmark} id="close_button" onClick={mobileOpenClose} />
+        <div id="overlay_content">
+          <ul>
+            <li>
+              <a href="./#" onClick={mobileOpenClose}>{isDanish ? "Hjem" : "Home"}</a>
+            </li>
+            <li>
+              <a href="./#about" onClick={mobileOpenClose}>{isDanish ? "Om mig" : "About"}</a>
+            </li>
+            <li>
+              <a href="./#projects" onClick={mobileOpenClose}>{isDanish ? "Projekter" : "Projects"}</a>
+            </li>
+            <div id="language_selectors_mobile">
+              <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
+              <span>|</span>
+              <a href="./#" onClick={languageSwitchEnglish}>English</a>
+            </div>
+          </ul>
         </div>
       </div>
     </header >

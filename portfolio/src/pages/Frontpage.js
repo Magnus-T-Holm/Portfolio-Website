@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Aside from "../components/Aside";
-// import $ from 'jquery';
 
 const Frontpage = () => {
   let isDanish;
@@ -11,18 +10,11 @@ const Frontpage = () => {
     isDanish = false
   }
 
-  // let asideOpen;
-
-  // if (localStorage.getItem("menuStatus") === "open") {
-  //   asideOpen = true
-  // } else {
-  //   asideOpen = false
-  // }
 
   return (
     <main id="frontpage">
       <Aside />
-      <div id="section_wrapper" /*className={asideOpen ? "" : "menu_closed_wrapper"}*/>
+      <div id="section_wrapper">
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>
@@ -45,6 +37,7 @@ const Frontpage = () => {
                 <p className="skill">HTML</p>
                 <p className="skill">CSS</p>
                 <p className="skill">JavaScript</p>
+                <p className="skill">jQuery</p>
                 <p className="skill">React</p>
                 <p className="skill">EJS</p>
                 <p className="skill">Node.js</p>
@@ -78,7 +71,7 @@ const Frontpage = () => {
               <div className="project_extra_details">
                 <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
                 <p className="site_info">
-                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                  {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
                 </p>
                 <p className="site_info">{isDanish ? "Sprog: Dansk og engelsk" : "Language: Danish and English"}</p>
               </div>
@@ -102,7 +95,7 @@ const Frontpage = () => {
               <div className="project_extra_details">
                 <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
                 <p className="site_info">
-                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                  {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
                 </p>
                 <p className="site_info">{isDanish ? "Sprog: Engelsk" : "Language: English"}</p>
               </div>
@@ -129,7 +122,7 @@ const Frontpage = () => {
               <div className="project_extra_details">
                 <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
                 <p className="site_info">
-                  {isDanish ? "Mobil venlig: Ja, til en vis grad (bliver snart fixet)" : "Mobil friendly: Yes, to an extent (will get fixed soon)"}
+                  {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
                 </p>
                 <p className="site_info">{isDanish ? "Sprog: Engelsk" : "Language: English"}</p>
               </div>

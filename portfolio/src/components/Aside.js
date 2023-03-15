@@ -1,8 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import $ from 'jquery';
 
 const Aside = () => {
   let isDanish;
@@ -32,29 +30,6 @@ const Aside = () => {
     }
   }
 
-  // let asideOpen;
-
-  // if (localStorage.getItem("menuStatus") == null) {
-  //   localStorage.setItem("menuStatus", "closed")
-  // }
-
-  // if (localStorage.getItem("menuStatus") === "open") {
-  //   asideOpen = true
-  // } else {
-  //   asideOpen = false
-  // }
-
-  // function menuOpenClose() {
-  //   $("#menu_button").toggleClass("menu_open_button");
-  //   $("aside").toggleClass("aside_open");
-  //   $("nav").toggleClass("menu_closed");
-  //   $("#section_wrapper").toggleClass("menu_closed_wrapper");
-  //   if (localStorage.getItem("menuStatus") == "open") {
-  //     localStorage.setItem("menuStatus", "closed")
-  //   } else {
-  //     localStorage.setItem("menuStatus", "open")
-  //   }
-  // }
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -91,8 +66,7 @@ const Aside = () => {
 
   return (
     <aside id="aside_nav">
-      {/* <FontAwesomeIcon icon={faBars} id="menu_button" onClick={menuOpenClose} className={asideOpen ? "menu_open_button" : ""} /> */}
-      <nav /*className={asideOpen ? "" : "menu_closed"}*/>
+      <nav>
         <ul>
           <li><a href="./#" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</a></li>
           <li><a href="./#about" data-danish="Om mig" data-english="About" onPointerEnter={glitchText}>{isDanish ? "Om mig" : "About"}</a></li>
@@ -114,10 +88,6 @@ const Aside = () => {
             <FontAwesomeIcon icon={faGithubSquare} />
           </a>
         </div>
-        {/* <div id="email">
-          <FontAwesomeIcon icon={faEnvelope} />
-          <p>magnusthestrup@hotmail.com</p>
-        </div> */}
       </nav>
     </aside>
   );
