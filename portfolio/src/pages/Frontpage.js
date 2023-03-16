@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import Aside from "../components/Aside";
@@ -12,7 +13,6 @@ const Frontpage = () => {
   } else {
     isDanish = false
   }
-
 
   return (
     <main id="frontpage">
@@ -32,17 +32,23 @@ const Frontpage = () => {
               <div>
                 <p className="info">{isDanish ? <>Jeg er en <strong>junior Frontend Web Udvikler</strong>, som stræber efter at lave velfungerende hjemmesider.</> : <>I'm a <strong>junior Frontend Web Developer</strong>, that strives to create functioning websites</>}</p>
                 <p className="info">{isDanish ? <>Jeg er åben for <strong>job muligheder</strong>, hvor jeg kan bidrage, lærer og vokse. Hvis du har eller kender til en god stilling, som matcher med mine skills og erfaring, så er du velkommen til at <strong>kontakte mig</strong></> : <>I am open to <strong>job opportunities</strong> where I can contribute, learn and grow. If you have or know of a good position that matches my skills and experience then don't hesitate to <strong>contact me</strong>.</>}</p>
-                <div id="social_links">
+                <div id="contact">
                   <h4>{isDanish ? "Sociale media og mail" : "Social media og mail"}</h4>
-                  <a
-                    id="linkedin"
-                    href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                  <a id="github" href="https://github.com/Magnus-T-Holm" target="blank">
-                    <FontAwesomeIcon icon={faGithubSquare} />
-                  </a>
+                  <div id="social_links">
+                    <a
+                      id="linkedin"
+                      href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
+                    >
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a id="github" href="https://github.com/Magnus-T-Holm" target="blank">
+                      <FontAwesomeIcon icon={faGithubSquare} />
+                    </a>
+                  </div>
+                  <div id="email">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <p>magnusthestrup@hotmail.com</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -70,7 +76,7 @@ const Frontpage = () => {
           <h2>{isDanish ? "Projekter" : "Projects"}</h2>
           {/* Memory Game */}
           <div className="project_container">
-            <img src="memory.jpg" alt="" />
+            <img src="memory.jpg" alt="" className="memory" />
             <div className="project_info">
               <Link className="project_title" to="/projects/memory-game">
                 {isDanish ? "Huskespil projekt v1.5" : "Memory game project v1.5"}
@@ -94,7 +100,7 @@ const Frontpage = () => {
           </div>
           {/* Playing card drawing */}
           <div className="project_container">
-            <img src="card_draw.jpg" alt="" />
+            <img src="card_draw.jpg" alt="" className="card_draw" />
             <div className="project_info">
               <Link className="project_title" to="/projects/card-draw">
                 {isDanish ? "Spillekort projekt v1.0" : "Playing card project v1.0"}
@@ -118,7 +124,7 @@ const Frontpage = () => {
           </div>
           {/* Major Arcana */}
           <div className="project_container">
-            <img src="tarot.jpg" alt="" />
+            <img src="tarot.jpg" alt="" className="tarot" />
             <div className="project_info">
               <Link className="project_title" to="/projects/tarot">
                 {isDanish ? "Major Arcana Tarot projekt v1.0" : "Major Arcana Tarot project v1.0"}

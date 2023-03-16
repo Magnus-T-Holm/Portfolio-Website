@@ -53,7 +53,7 @@ const CardDraw = () => {
     <main >
       <Aside />
       <div id="card_draw">
-        <aside id="controls">
+        <div id="controls">
           <button onClick={draw_cards}>Draw Cards</button>
           <div id="draw_amount_container">
             <label htmlFor="draw_amount">Amount of cards to draw</label>
@@ -73,7 +73,7 @@ const CardDraw = () => {
             </p>
           </div>
           <button onClick={reset_deck}>Reset Deck</button>
-        </aside>
+        </div>
 
         <div id="card_area_container">
           <p>

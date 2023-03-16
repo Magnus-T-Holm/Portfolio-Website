@@ -64,7 +64,7 @@ const Header = () => {
             </li>
             <div id="language_selectors_mobile">
               <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
-              <span>|</span>
+              <hr />
               <a href="./#" onClick={languageSwitchEnglish}>English</a>
             </div>
           </ul>

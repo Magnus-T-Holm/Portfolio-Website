@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Deck } from "cards";
+import { Deck } from "cards"; // https://www.npmjs.com/package/cards
 import TarotCard from "./TarotCard";
 import Aside from "../../Aside";
 
@@ -216,8 +216,11 @@ const Tarot = () => {
     <main>
       <Aside />
       <div id="card_draw">
-        <aside id="controls">
+        <div id="controls">
           <button onClick={draw_cards}>Draw Cards</button>
+          <p>
+            Cards left: <span>{deck_size}</span>/22
+          </p>
           <div id="draw_amount_container">
             <label htmlFor="draw_amount">Amount of cards to draw</label>
             <input
@@ -230,9 +233,9 @@ const Tarot = () => {
               onChange={updateDrawAmount}
             />
             <p ref={wrong_input} id="wrong_input">
-              The amount of cards you want to draw is either not a number or a
-              negative number. Please enter a positive number in the input field
-              above.
+              The input is invalid.
+              <br />
+              Please enter a positive number.
             </p>
           </div>
           <div id="card_art_container">
@@ -259,12 +262,9 @@ const Tarot = () => {
               <a href="https://twitter.com/emmmerald_" target="blank">Emmmerald_</a>
             </p>
           </div>
-        </aside>
+        </div>
 
         <div id="card_area_container">
-          <p>
-            Cards left: <span>{deck_size}</span>/22
-          </p>
           <div id="card_area">
             <LoadCards />
           </div>
