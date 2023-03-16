@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Aside = () => {
   let isDanish;
@@ -76,17 +74,6 @@ const Aside = () => {
           <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
           <span>|</span>
           <a href="./#" onClick={languageSwitchEnglish}>English</a>
-        </div>
-        <div id="social_links">
-          <a
-            id="linkedin"
-            href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </a>
-          <a id="github" href="https://github.com/Magnus-T-Holm" target="blank">
-            <FontAwesomeIcon icon={faGithubSquare} />
-          </a>
         </div>
       </nav>
     </aside>

@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 import Aside from "../components/Aside";
 
 const Frontpage = () => {
@@ -29,6 +32,18 @@ const Frontpage = () => {
               <div>
                 <p className="info">{isDanish ? <>Jeg er en <strong>junior Frontend Web Udvikler</strong>, som stræber efter at lave velfungerende hjemmesider.</> : <>I'm a <strong>junior Frontend Web Developer</strong>, that strives to create functioning websites</>}</p>
                 <p className="info">{isDanish ? <>Jeg er åben for <strong>job muligheder</strong>, hvor jeg kan bidrage, lærer og vokse. Hvis du har eller kender til en god stilling, som matcher med mine skills og erfaring, så er du velkommen til at <strong>kontakte mig</strong></> : <>I am open to <strong>job opportunities</strong> where I can contribute, learn and grow. If you have or know of a good position that matches my skills and experience then don't hesitate to <strong>contact me</strong>.</>}</p>
+                <div id="social_links">
+                  <h4>{isDanish ? "Sociale media og mail" : "Social media og mail"}</h4>
+                  <a
+                    id="linkedin"
+                    href="https://www.linkedin.com/in/magnus-thestrup-holm/" target="blank"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                  <a id="github" href="https://github.com/Magnus-T-Holm" target="blank">
+                    <FontAwesomeIcon icon={faGithubSquare} />
+                  </a>
+                </div>
               </div>
             </div>
             <div id="skills">
