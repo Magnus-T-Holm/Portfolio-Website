@@ -1,4 +1,5 @@
 import React from "react";
+import { NavHashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -54,18 +55,18 @@ const Header = () => {
         <div id="overlay_content">
           <ul>
             <li>
-              <a href="./#" onClick={mobileOpenClose}>{isDanish ? "Hjem" : "Home"}</a>
+              <NavHashLink to="/" onClick={mobileOpenClose}>{isDanish ? "Hjem" : "Home"}</NavHashLink>
             </li>
             <li>
-              <a href="./#about" onClick={mobileOpenClose}>{isDanish ? "Om mig" : "About"}</a>
+              <NavHashLink to="/#about" onClick={mobileOpenClose}>{isDanish ? "Om mig" : "About"}</NavHashLink>
             </li>
             <li>
-              <a href="./#projects" onClick={mobileOpenClose}>{isDanish ? "Projekter" : "Projects"}</a>
+              <NavHashLink to="/#projects" onClick={mobileOpenClose}>{isDanish ? "Projekter" : "Projects"}</NavHashLink>
             </li>
             <div id="language_selectors_mobile">
-              <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
+              <span onClick={languageSwitchDanish}>Dansk</span>
               <hr />
-              <a href="./#" onClick={languageSwitchEnglish}>English</a>
+              <span onClick={languageSwitchEnglish}>English</span>
             </div>
           </ul>
         </div>

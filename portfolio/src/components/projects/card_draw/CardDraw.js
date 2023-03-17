@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { decks } from "cards";
-
+import React, { useEffect, useState } from "react";
+import { decks } from "cards"; // https://www.npmjs.com/package/cards
 import Aside from "../../Aside";
 import Card from "./Card";
 
 const CardDraw = () => {
   const [deck] = useState(new decks.StandardDeck());
+  useEffect(() => {
+    deck.shuffleAll();
+  }, [])
   const [deck_size, setDeck_size] = useState(deck.remainingLength);
   const [current_cards, setCurrent_cards] = useState([
     { rank: { shortName: "gray", longName: "" }, suit: { name: "back" } },
@@ -55,6 +57,9 @@ const CardDraw = () => {
       <div id="card_draw">
         <div id="controls">
           <button onClick={draw_cards}>Draw Cards</button>
+          <p>
+            Cards left: <span>{deck_size}</span>/52
+          </p>
           <div id="draw_amount_container">
             <label htmlFor="draw_amount">Amount of cards to draw</label>
             <input
@@ -67,18 +72,14 @@ const CardDraw = () => {
               onChange={updateDrawAmount}
             />
             <p ref={wrong_input} id="wrong_input">
-              The amount of cards you want to draw is either not a number or a
-              negative number. <br /> Please enter a positive number in the input
-              field above.
-            </p>
-          </div>
+              The input is invalid.
+              <br />
+              Please enter a positive number.
+            </p>          </div>
           <button onClick={reset_deck}>Reset Deck</button>
         </div>
 
         <div id="card_area_container">
-          <p>
-            Cards left: <span>{deck_size}</span>/52
-          </p>
           <div id="card_area">
             {current_cards.map((card, i) => (
               <Card

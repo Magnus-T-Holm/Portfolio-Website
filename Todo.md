@@ -1,3 +1,2 @@
 # Todo list
-* Improve mobile versions of project pages.
-* Fix card and tarot apps
+* Fix navigation from projects to sections of frontpage

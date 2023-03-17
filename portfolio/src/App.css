@@ -84,6 +84,12 @@ ul {
   color: whitesmoke;
 }
 
+#language_selectors_mobile span {
+  padding: 8px;
+  font-size: 36px;
+  color: whitesmoke;
+}
+
 #language_selectors_mobile hr {
   height: 61px;
 }
@@ -139,12 +145,17 @@ main {
   margin-right: 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-#language_selectors a {
-  text-decoration: none;
+#language_selectors span {
   color: whitesmoke;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+#language_selectors hr {
+  height: 20px;
 }
 
 /*------------ Sections ------------*/
@@ -327,8 +338,10 @@ h2 {
 /*---------------------- Card drawing app ----------------------*/
 #card_draw {
   background-color: var(--body);
-  padding: 50px 0;
+  padding: 50px 10px;
   display: flex;
+  flex-direction: column;
+  width: 100%;
   color: var(--text);
   margin-left: 250px;
 }
@@ -338,6 +351,7 @@ h2 {
 #controls {
   display: flex;
   flex-direction: column;
+  width: 50%;
   gap: 15px;
   min-width: 250px;
   margin: 0 10px;
@@ -385,36 +399,27 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px 20px;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .cards {
-  text-align: center;
-  width: 250px;
-  margin: 10px;
-}
-
-.cards img {
-  width: 250px;
-}
-
-.tarot_cards {
-  min-width: 230px;
-  max-width: 300px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.tarot_cards img {
-  height: 400px;
+.cards img {
+  height: clamp(200px, 30vw, 400px);
   align-self: center;
 }
 
-.tarot_cards p {
+.cards p {
   line-height: 1.5;
 }
 
-.tarot_cards p:first-of-type {
+.cards p:first-of-type {
   align-self: center;
   font-size: larger;
 }
@@ -426,8 +431,6 @@ h2 {
 /*---------------------- Memory game app ----------------------*/
 
 #game_intro {
-  background-color: var(--body);
-  color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -458,17 +461,14 @@ h2 {
 }
 
 #playGame input[type="radio"]:checked+label {
-  background-color: var(--headfoot);
-  color: var(--text);
+  background-color: lightskyblue;
 }
 
 #playGame button[type="submit"] {
   display: block;
   margin: 0 auto;
   padding: 1.25em 2.5em;
-  background-color: var(--headfoot);
   font-weight: 700;
-  color: var(--text);
   border: none;
   cursor: pointer;
 }
@@ -479,7 +479,6 @@ h2 {
   padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: #ddd;
 }
 
 #game_board.hidden {
@@ -537,6 +536,11 @@ h2 {
   background-color: #ccc;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+#game_end button {
+  padding: 10px;
 }
 
 #game_end.show {
@@ -599,11 +603,6 @@ h2 {
     margin-bottom: 40px;
   }
 
-  #email svg,
-  #email p {
-    font-size: x-large;
-  }
-
   .project_container {
     flex-direction: column-reverse;
     align-items: initial;
@@ -617,38 +616,5 @@ h2 {
 
   .project_container img {
     width: 100%;
-  }
-
-  /*----------- Card drawing app -----------*/
-  #card_draw {
-    flex-direction: column;
-    width: 100%;
-    padding: 50px 10px;
-  }
-
-  #controls {
-    width: 50%;
-  }
-
-  #card_area {
-    width: 100%;
-  }
-
-  .tarot_cards {
-    width: 50%;
-  }
-}
-
-
-/*-------------------------------- Max 420px width --------------------------------*/
-@media screen and (max-width: 420px) {
-
-  /*----------- Card drawing app -----------*/
-  .tarot_cards {
-    width: 250px;
-  }
-
-  .tarot_cards img {
-    width: 250px;
   }
 }

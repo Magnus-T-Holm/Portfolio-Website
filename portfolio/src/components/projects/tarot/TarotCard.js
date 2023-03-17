@@ -3,7 +3,7 @@ import React from "react";
 const TarotCard = (data, key) => {
   // console.log(data);
   return (
-    <div className="tarot_cards">
+    <div className="cards">
       <img
         src={"/cards/" + data.style + "/" + data.rank + ".jpg"}
         alt={data.rank}

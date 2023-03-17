@@ -1,4 +1,5 @@
 import React from "react";
+import { NavHashLink } from 'react-router-hash-link';
 
 const Aside = () => {
   let isDanish;
@@ -27,7 +28,6 @@ const Aside = () => {
       window.location.reload();
     }
   }
-
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -66,14 +66,14 @@ const Aside = () => {
     <aside id="aside_nav">
       <nav>
         <ul>
-          <li><a href="./#" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</a></li>
-          <li><a href="./#about" data-danish="Om mig" data-english="About" onPointerEnter={glitchText}>{isDanish ? "Om mig" : "About"}</a></li>
-          <li><a href="./#projects" data-danish="Projekter" data-english="Projects" onPointerEnter={glitchText}>{isDanish ? "Projekter" : "Projects"}</a></li>
+          <li><NavHashLink to="/" data-danish="Hjem" data-english="Home" onPointerEnter={glitchText}>{isDanish ? "Hjem" : "Home"}</NavHashLink></li>
+          <li><NavHashLink to="/#about" data-danish="Om mig" data-english="About" onPointerEnter={glitchText}>{isDanish ? "Om mig" : "About"}</NavHashLink></li>
+          <li><NavHashLink to="/#projects" data-danish="Projekter" data-english="Projects" onPointerEnter={glitchText}>{isDanish ? "Projekter" : "Projects"}</NavHashLink></li>
         </ul>
         <div id="language_selectors">
-          <a href="./#" onClick={languageSwitchDanish}>Dansk</a>
-          <span>|</span>
-          <a href="./#" onClick={languageSwitchEnglish}>English</a>
+          <span onClick={languageSwitchDanish}>Dansk</span>
+          <hr />
+          <span onClick={languageSwitchEnglish}>English</span>
         </div>
       </nav>
     </aside>

@@ -3,6 +3,14 @@ import Aside from "../../Aside";
 
 
 const MemoryGame = () => {
+  let isDanish;
+
+  if (localStorage.getItem("isDanish") === "true") {
+    isDanish = true
+  } else {
+    isDanish = false
+  }
+
   let tileImgs = [
     "Death",
     "Judgement",
@@ -145,8 +153,8 @@ const MemoryGame = () => {
 
       <div id="section_wrapper">
         <div id="game_intro">
-          <h1>Huske Spil V1</h1>
-          <p>Vælg antallet af brikker i spillet</p>
+          <h1>{isDanish ? "Huske Spil V1" : "Memory game V1"}</h1>
+          <p>{isDanish ? "Vælg antallet af kort i spillet" : "Select the number of cards in the game"}</p>
           <form id="playGame">
             <div>
               <input
@@ -167,12 +175,12 @@ const MemoryGame = () => {
               <label htmlFor="fortyfour">44</label>
             </div>
 
-            <button type="submit">Spil</button>
+            <button type="submit">Start</button>
           </form>
         </div>
         <div id="game_end">
-          <p>Du vandt</p>
-          <button>Tilbage til brik menuen</button>
+          <p>{isDanish ? "Du vandt" : "You won"}</p>
+          <button>{isDanish ? "Tilbage til start menuen" : "Back to the start menu"}</button>
         </div>
         <div id="game_board" className="hidden"></div>
       </div>

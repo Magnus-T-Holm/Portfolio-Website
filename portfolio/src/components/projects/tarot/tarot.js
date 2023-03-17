@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Deck } from "cards"; // https://www.npmjs.com/package/cards
 import TarotCard from "./TarotCard";
 import Aside from "../../Aside";
@@ -141,6 +141,9 @@ const Tarot = () => {
       },
     ])
   );
+  useEffect(() => {
+    deck.shuffleAll();
+  }, [])
   const [deck_size, setDeck_size] = useState(deck.remainingLength);
   const [current_cards, setCurrent_cards] = useState([
     { rank: "Card Back", domt_title: "", domt_text: "" },
