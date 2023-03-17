@@ -3,8 +3,6 @@ import { NavHashLink } from 'react-router-hash-link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-
-
 const Header = () => {
   let isDanish;
 
@@ -55,13 +53,13 @@ const Header = () => {
         <div id="overlay_content">
           <ul>
             <li>
-              <NavHashLink to="/" onClick={mobileOpenClose}>{isDanish ? "Hjem" : "Home"}</NavHashLink>
+              <NavHashLink to="/portfolio/#home" onClick={mobileOpenClose}>{isDanish ? "Hjem" : "Home"}</NavHashLink>
             </li>
             <li>
-              <NavHashLink to="/#about" onClick={mobileOpenClose}>{isDanish ? "Om mig" : "About"}</NavHashLink>
+              <NavHashLink to="/portfolio/#about" onClick={mobileOpenClose}>{isDanish ? "Om mig" : "About"}</NavHashLink>
             </li>
             <li>
-              <NavHashLink to="/#projects" onClick={mobileOpenClose}>{isDanish ? "Projekter" : "Projects"}</NavHashLink>
+              <NavHashLink to="/portfolio/#projects" onClick={mobileOpenClose}>{isDanish ? "Projekter" : "Projects"}</NavHashLink>
             </li>
             <div id="language_selectors_mobile">
               <span onClick={languageSwitchDanish}>Dansk</span>

@@ -10,13 +10,10 @@ export default function UpdateTitle() {
         isDanish = false
     }
     const titles = {
-        "/": isDanish ? "Hjem" : "Home",
-        "/projects": isDanish ? "Projekter" : "Projects",
-        "/projects/": isDanish ? "Projekter" : "Projects",
-        "/projects/card-draw": isDanish ? "Projekter - Spillekort" : "Projects - Playing card",
-        "/projects/tarot": isDanish ? "Projekter - Tarot" : "Projects - Tarot",
-        "/projects/memory-game": isDanish ? "Projekter - Huskespil" : "Projects - Memory Game",
-        "/about-me": isDanish ? "Om mig" : "About me"
+        "/portfolio/": "Portfolio",
+        "/portfolio/projects/card-draw": isDanish ? "Projekter - Spillekort" : "Projects - Playing card",
+        "/portfolio/projects/tarot": isDanish ? "Projekter - Tarot" : "Projects - Tarot",
+        "/portfolio/projects/memory-game": isDanish ? "Projekter - Huskespil" : "Projects - Memory Game"
     };
 
     const { pathname } = useLocation();

@@ -5,7 +5,8 @@ const TarotCard = (data, key) => {
   return (
     <div className="cards">
       <img
-        src={"/cards/" + data.style + "/" + data.rank + ".jpg"}
+        //change src to /cards/ when testing and /portfolio/cards/ when deploying
+        src={"/portfolio/cards/" + data.style + "/" + data.rank + ".jpg"}
         alt={data.rank}
       />
       {/* Not domt */}
