@@ -5,18 +5,13 @@ import {
   Routes
 } from "react-router-dom";
 
-// ------------------------- Main Page -------------------------
-// Univesal
+// ------------------------- Univesal -------------------------
 import Header from "./components/Header";
-
-import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"
 import UpdateTitle from "./components/UpdateTitle";
 
-// Pages
+// ------------------------- Pages -------------------------
 import Frontpage from "./pages/Frontpage";
-// import Projects from "./pages/Projects";
-// import AboutMe from "./pages/AboutMe";
 
 // ------------------------- Projects -------------------------
 import MemoryGame from "./components/projects/memory_game/MemoryGame";
@@ -37,11 +32,8 @@ function App() {
           <Route path="/portfolio/projects/card-draw" element={<CardDraw />} />
           <Route path="/portfolio/projects/tarot" element={<Tarot />} />
           <Route path="/portfolio/projects/memory-game" element={<MemoryGame />} />
-          {/* <Route path="/projects" element={<Projects />} />
-        <Route path="/about-me" element={<AboutMe />} /> */}
-          <Route path="/portfolio/*" element={<Navigate to="/" />} />
+          <Route path="/portfolio/*" element={<Navigate to="/portfolio/" />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
