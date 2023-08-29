@@ -174,7 +174,8 @@ h2 {
 }
 
 #about,
-#projects {
+#own_projects,
+#school_projects {
   display: flex;
   flex-direction: column;
 }
@@ -184,7 +185,8 @@ h2 {
 }
 
 #about span,
-#projects span {
+#own_projects span,
+#school_projects span {
   text-align: center;
   margin: 50px 0;
 }
@@ -577,7 +579,8 @@ h2 {
   }
 
   #about span,
-  #projects span {
+  #own_projects span,
+  #school_projects span {
     padding: 0 10px;
   }
 

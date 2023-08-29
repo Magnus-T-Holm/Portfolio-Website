@@ -21,7 +21,7 @@ const Frontpage = () => {
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>
-          <a href="/#projects">{isDanish ? "Projekter" : "Projects"}</a>
+          <a href="/#own_projects">{isDanish ? "Projekter" : "Projects"}</a>
         </section>
         <section id="about">
           <h2>{isDanish ? "Om mig" : "About me"}</h2>
@@ -72,8 +72,8 @@ const Frontpage = () => {
             </div>
           </div>
         </section>
-        <section id="projects">
-          <h2>{isDanish ? "Projekter" : "Projects"}</h2>
+        <section id="own_projects">
+          <h2>{isDanish ? "Personlige Projekter" : "Personal Projects"}</h2>
           {/* Memory Game */}
           <div className="project_container">
             {/* change src to /cards/ when testing and /cards/ when deploying */}
@@ -149,6 +149,65 @@ const Frontpage = () => {
                   {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
                 </p>
                 <p className="site_info">{isDanish ? "Sprog: Engelsk" : "Language: English"}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="school_projects">
+          <h2>{isDanish ? "Skole Projekter" : "School Projects"}</h2>
+          {/* Golfacross */}
+          <div className="project_container">
+            <img src="/golfacross.jpg" alt="" />
+            <div className="project_info">
+              <a className="project_title" href="/projects/golfacross">
+                Golfacross
+              </a>
+              <div className="project_description">
+                <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
+                <section>
+                  <p>
+                    {isDanish ? "En uddannelses opgave, hvor vi skulle lave en hjemmeside for Golfacross." : "An education assignment, where we had to make a website for Golfacross."}
+                  </p>
+                  <p>
+                    {isDanish ? 'Jeg var ansvarlig for at lave "Info" siden, men hjalp også med de andre sider.' : 'I was responsible for making the "Info" page, but I also helped with the other pages.'}
+                  </p>
+                </section>
+              </div>
+              <div className="project_extra_details">
+                <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
+                <p className="site_info">
+                  {isDanish ? "Mobil venlig: Delvist" : "Mobil friendly: Kind of"}
+                </p>
+                <p className="site_info">{isDanish ? "Sprog: Dansk" : "Language: Danish"}</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* SoundEvent */}
+          <div className="project_container">
+            <img src="/soundevent.jpg" alt="" />
+            <div className="project_info">
+              <a className="project_title" href="/projects/soundevent">
+              SoundEvent
+              </a>
+              <div className="project_description">
+                <h3>{isDanish ? "Projekt beskrivelse" : "Project description"}</h3>
+                <section>
+                  <p>
+                    {isDanish ? "En uddannelses opgave, hvor vi skulle lave en hjemmeside for firmaet SoundEvent." : "An education assignment, where we had to make a website for company SoundEvent."}
+                  </p>
+                  <p>
+                    {isDanish ? 'Jeg var ansvarlig for at lave størstedelen af hjemmesiden, når det kommer til koden.' : 'I was responsible for making most of the website, when it comes to the code.'}
+                  </p>
+                </section>
+              </div>
+              <div className="project_extra_details">
+                <h3>{isDanish ? "Projekt detaljer" : "Project details"}</h3>
+                <p className="site_info">
+                  {isDanish ? "Mobil venlig: Ja" : "Mobil friendly: Yes"}
+                </p>
+                <p className="site_info">{isDanish ? "Sprog: Dansk" : "Language: Danish"}</p>
               </div>
             </div>
           </div>
