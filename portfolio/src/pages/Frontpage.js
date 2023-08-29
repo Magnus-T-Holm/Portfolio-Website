@@ -21,7 +21,7 @@ const Frontpage = () => {
         <section id="home">
           <h1>{isDanish ? "Hej, mit navn er " : "Hi, my name is "} Magnus</h1>
           <span>{isDanish ? "En web udvikler, med fokus på frontend" : "A web developer, with a focus on frontend"}</span>
-          <a href="/portfolio/#projects">{isDanish ? "Projekter" : "Projects"}</a>
+          <a href="/#projects">{isDanish ? "Projekter" : "Projects"}</a>
         </section>
         <section id="about">
           <h2>{isDanish ? "Om mig" : "About me"}</h2>
@@ -76,10 +76,10 @@ const Frontpage = () => {
           <h2>{isDanish ? "Projekter" : "Projects"}</h2>
           {/* Memory Game */}
           <div className="project_container">
-            {/* change src to /cards/ when testing and /portfolio/cards/ when deploying */}
-            <img src="/portfolio/memory.jpg" alt="" className="memory" />
+            {/* change src to /cards/ when testing and /cards/ when deploying */}
+            <img src="/memory.jpg" alt="" className="memory" />
             <div className="project_info">
-              <Link className="project_title" to="/portfolio/projects/memory-game">
+              <Link className="project_title" to="/projects/memory-game">
                 {isDanish ? "Huskespil projekt v1.5" : "Memory game project v1.5"}
               </Link>
               <div className="project_description">
@@ -101,10 +101,10 @@ const Frontpage = () => {
           </div>
           {/* Playing card drawing */}
           <div className="project_container">
-            {/* change src to /cards/ when testing and /portfolio/cards/ when deploying */}
-            <img src="/portfolio/card_draw.jpg" alt="" className="card_draw" />
+            {/* change src to /cards/ when testing and /cards/ when deploying */}
+            <img src="/card_draw.jpg" alt="" className="card_draw" />
             <div className="project_info">
-              <Link className="project_title" to="/portfolio/projects/card-draw">
+              <Link className="project_title" to="/projects/card-draw">
                 {isDanish ? "Spillekort projekt v1.0" : "Playing card project v1.0"}
               </Link>
               <div className="project_description">
@@ -126,10 +126,10 @@ const Frontpage = () => {
           </div>
           {/* Major Arcana */}
           <div className="project_container">
-            {/* change src to /cards/ when testing and /portfolio/cards/ when deploying */}
-            <img src="/portfolio/tarot.jpg" alt="" className="tarot" />
+            {/* change src to /cards/ when testing and /cards/ when deploying */}
+            <img src="/tarot.jpg" alt="" className="tarot" />
             <div className="project_info">
-              <Link className="project_title" to="/portfolio/projects/tarot">
+              <Link className="project_title" to="/projects/tarot">
                 {isDanish ? "Major Arcana Tarot projekt v1.0" : "Major Arcana Tarot project v1.0"}
               </Link>
               <div className="project_description">

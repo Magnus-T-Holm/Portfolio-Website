@@ -62,7 +62,7 @@ const MemoryGame = () => {
       content += "<section>";
       content += '<div class="front"></div>';
       content +=
-        '<div class="back"><img src="/portfolio/cards/ds/' + //change src to /cards/ when testing and /portfolio/cards/ when deploying
+        '<div class="back"><img src="/cards/ds/' + //change src to /cards/ when testing and /cards/ when deploying
         gameTileImgs[i] +
         '.jpg"></div>';
       content += "</section>";

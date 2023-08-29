@@ -28,11 +28,11 @@ function App() {
         <UpdateTitle />
         <Header />
         <Routes>
-          <Route path="/portfolio/" element={<Frontpage />} />
-          <Route path="/portfolio/projects/card-draw" element={<CardDraw />} />
-          <Route path="/portfolio/projects/tarot" element={<Tarot />} />
-          <Route path="/portfolio/projects/memory-game" element={<MemoryGame />} />
-          <Route path="/portfolio/*" element={<Navigate to="/portfolio/" />} />
+          <Route path="/" element={<Frontpage />} />
+          <Route path="/projects/card-draw" element={<CardDraw />} />
+          <Route path="/projects/tarot" element={<Tarot />} />
+          <Route path="/projects/memory-game" element={<MemoryGame />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>

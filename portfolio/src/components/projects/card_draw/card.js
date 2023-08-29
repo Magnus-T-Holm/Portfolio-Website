@@ -15,8 +15,8 @@ const Card = (data, key) => {
   return (
     <div className="cards">
       <img
-        //change src to /cards/ when testing and /portfolio/cards/ when deploying
-        src={"/portfolio/cards/standard_cards/" + data.rank + data.suit + ".png"}
+        //change src to /cards/ when testing and /cards/ when deploying
+        src={"/cards/standard_cards/" + data.rank + data.suit + ".png"}
         alt={card_name}
       />
       <p className='cardName'>{card_name}</p>
